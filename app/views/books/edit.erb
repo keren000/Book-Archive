@@ -1,0 +1,39 @@
+<div class="container">
+  <form class="books-form" action="/books/<%= @book.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+    <br />
+     <h1 style="color: grey;">Edit "<%= @book.title%>" </h1>
+    <hr width="60%" align="left"/>
+    <div class="form-group">
+    <br />
+      <label for="title">Title</label>
+      <input type="text" name="title" class="col-6 form-control" value="<%= @book.title%>" required>
+    </div>
+
+   
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input type="text" name="author" class="col-6 form-control"  value="<%= @book.author%>">
+    </div>
+
+    
+    <div class="form-group">
+      <label for="date">Publication Date</label>
+      <input type="date" name="date" class="col-6 form-control" required>
+    </div>
+
+    
+    <label for="format">Format</label>
+    <div class="form-group">
+   
+        <input type="radio" name="format" class="format-option" value="PDF" <%='checked' if @book.format == "PDF"%> >PDF</input>&nbsp;
+        <input type="radio" name="format" class="format-option" value="eBook" <%='checked' if @book.format == "eBook"%> >EBook</input>&nbsp;
+        <input type="radio" name="format" class="format-option" value="Audiobook" <%='checked' if @book.format == "Audiobook"%> >AudioBook</input>
+      
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="btn-edit">Edit Book</button>
+    <a href="/books" class="btn btn-danger">Cancel</a>
+
+  </form>
+</div>

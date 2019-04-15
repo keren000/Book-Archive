@@ -1,0 +1,62 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Mono", monospace;
+}
+
+p,
+div {
+  font-family: "Roboto Mono", monospace;
+}
+
+.home-page-bkgd {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-page-container {
+  height: 200px;
+  width: 400px;
+  background: none;
+
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+}
+
+.header h1 {
+  /*z-index: 1;*/
+  position: fixed;
+  width: 77%;
+  margin-top: -10px;
+  height: 50px;
+  background-color: #f9c63b;
+  /*margin-bottom: 10px;*/
+}
+
+.header img {
+  width: 97.5%;
+}
+
+.content-bkgd-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-bkgd-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-contents h1 {
+  height: 60px;
+  background: #f9c63b;
+  border: 1px solid #f9c63b;
+  width: cover;
+  margin: 20px;
+}

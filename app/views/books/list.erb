@@ -1,0 +1,43 @@
+<div class="container">
+ 
+  <div>
+  <br />
+    <% if @books.empty? %>
+      <p> Your list is empty! </p>
+      <button type="submit" class="btn btn-primary"><a href="books/new" style="color: white;">Create a New Book <i class="fa fa-plus" aria-hidden="true"></i></a></button>
+    
+    <% else %>
+
+      <table class="table">
+      <thead>
+          <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Book Title</th>
+            <th scope="col">Edit | Delete </th>
+             <th scope="col"><a href="/delete"><i class="fa fa-plus" aria-hidden="true"></i></a> </th>
+          
+          </tr>
+        </thead>
+              
+        <tbody>
+        <h2>Your Book List have:</h3>
+        <br />
+        <% @books.each_with_index do |book, index| %>
+          <tr> 
+            <th scope="row"><strong><%= index + 1%>.</strong></th>
+            <td><strong><%=book.title %></strong></td>
+            <td><strong><a href="/books/<%= book.id %>/edit">Edit</a></strong> | 
+                <strong><a href="/books/<%= book.id %>">Delete </a></strong></td>
+                     
+          </tr>
+ 
+      <% end %>
+      </tbody>
+      </table>
+      
+     <% end %> 
+ 
+
+  </div>
+ 
+ </div>

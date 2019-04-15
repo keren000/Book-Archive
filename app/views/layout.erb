@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Archive</title>
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+      <!-- Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="Shortcut Icon" type="image/x-icon" href="/img/book.png" />
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" style="color: black"><b>Book-Archive</b></a>
+    </div>
+    <% if logged_in?  %>
+    <ul class="nav justify-content-end">
+      <li class="nav-item"><a class="nav-link active" href='/index'><i class="fa fa-home" aria-hidden="true"></i><b>Home</b></a></li>
+      <li class="nav-item"><a class="nav-link" href="/list"><i class="fa fa-list" aria-hidden="true"></i><b>My Books</b></a>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i><b><%=current_user.username %></b></a>
+      <ul>
+      <li class="nav-item"><a class="nav-link" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i><b>Logout</b></a>
+      </ul>
+      <style>
+      ul
+{
+    font-family: Arial, Verdana;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li
+{
+    display: block;
+    position: relative;
+    float: left;
+}
+
+li ul
+{
+    display: none;
+}
+
+ul li a 
+{
+    display: block;
+    text-decoration: none;
+    padding: 5px 15px 5px 15px;
+    margin-left: 1px;
+    white-space: nowrap;
+}
+
+li:hover ul 
+{
+    display: block;
+    position: absolute;
+}
+
+li:hover li
+{
+    float: none;
+    font-size: 11px;
+}
+
+</style>
+      </li>
+    </ul>
+   <%else%>
+   <ul class="nav justify-content-end">
+      <li class="nav-item"><a class="nav-link active" href='/'><i class="fa fa-home" aria-hidden="true"></i><b>Home</b></a></li>
+    </ul>
+    <%end%>
+                  
+  </div>
+  </nav>
+  
+  <% if flash[:notice] %>
+  <%= flash[:notice] %>
+  <% end %>
+
+  <%= yield %>
+  
+</body>
+<!-- Footer -->
+<footer class="navbar footer fixed-bottom footer-light footer-shadow content container-fluid font-small red">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-align:center py-1">© 2019 Copyright by &nbsp;|
+    <a href="#" style="color: green"><i class="fa fa-heart-o" style="color: green"></i> Keren-Happuc Fleurimond</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</html>
