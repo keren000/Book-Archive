@@ -8,10 +8,10 @@ then you are in the right place, Book Archive is yours!!!
 
 ## Installation
 
-Fork and clone the repo
-Run bundle install to get all the dependencies
-Run rake db:migrate to set up the DataBase
-Run shotgun to start the server
+Fork and clone the repo;
+Run bundle install to get all the dependencies;
+Run rake db:migrate to set up the DataBase;
+Run shotgun to start the server.
 
 ## Contributions
 Create a descriptive pull request
